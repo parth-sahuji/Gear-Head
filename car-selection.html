@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Car</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="car-selection.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Select Your Car</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 id="cycbm">Choose Your Car Brand and Model</h2>
+
+        <form id="carForm">
+            <div class="dropdown-group">
+                <label for="brand1" class="dropdown-group">Select Brand :</label>
+                <select id="brand" onchange="updateModels()">
+                    <option value="">Select Brand</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes">Mercedes</option>
+                </select>
+            </div>
+            <div class="dropdown-group">
+                <label for="model">Select Model:</label>
+                <select id="model">
+                    <option value="">--Select Model--</option>
+                </select>
+            </div>
+            <button type="submit">Proceed to Tuning</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2026 GEAR HEAD. All rights reserved.</p>
+    </footer>
+
+</body>
+
+
+</html>

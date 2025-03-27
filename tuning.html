@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Tuning Stages</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function getCarModel() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const carModel = urlParams.get('car');
+            document.getElementById("carName").innerText = carModel;
+            document.getElementById("carImage").src = `images/${carModel.toLowerCase().replace(/ /g, '-')}.jpg`;
+        }
+    </script>
+</head>
+<body onload="getCarModel()">
+    <header>
+        <h1>Car Tuning Options</h1>
+        <nav>
+            <a href="index.html"> Home</a>
+        </nav>
+    </header>
+
+    <div class="tuning-stages">
+        <h2 id="carName"></h2>
+        <img id="carImage" src="" alt="Car Image" width="300">
+
+        <div class="tuning-stages">
+            <div class="stage">
+                <h3>Stage 1 Tuning</h3>
+                <p>Basic performance boost, improved ECU mapping.</p>
+                <p>Cost: ₹75,000</p>
+                <button>Select Stage 1</button>
+            </div>
+            <div class="stage">
+                <h3>Stage 2 Tuning</h3>
+                <p>Advanced tuning with better exhaust and air intake upgrades.</p>
+                <p>Cost: ₹1,20,000</p>
+                <button>Select Stage 2</button>
+            </div>
+            <div class="stage">
+                <h3>Stage 3 Tuning</h3>
+                <p>High-performance upgrades with turbocharging options.</p>
+                <p>Cost: ₹2,00,000</p>
+                <button>Select Stage 3</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GEAR HEAD. All rights reserved.</p>
+    </footer>
+
+    
+</body>
+</html>

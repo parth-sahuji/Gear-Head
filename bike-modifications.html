@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEAR HEAD</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function searchCar() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const carList = document.getElementsByClassName('car-item');
+
+            for (let i = 0; i < carList.length; i++) {
+                const carName = carList[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (carName.includes(input)) {
+                    carList[i].style.display = 'block';
+                    found = true;
+                }
+                else {
+                    carList[i].style.display = 'none';
+                }
+            }
+
+            if (!found) {
+                document.getElementById('noResults').style.display = 'block';
+            }
+            else {
+                document.getElementById('noResults').style.display = 'none';
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Car Modifications</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#services">Service</a>
+            <a href="#about">About US</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="search">
+            <h2>Search For Car Modification</h2>
+            <input type="text" id="searchInput" placeholder="Search For a Modification ..." onkeyup="searchCar()">
+            <div id="noResults" style="display: none;">No Resuls Found</div>
+        </section>
+
+        <section id="modification">
+            <h2>Available Car Modifications</h2>
+            <div class="car-item">
+
+                <h3>Sport Exhaust System</h3>
+                <p>Enhance your car's sound and performance with a high-quality sport exhaust system.</p>
+            </div>
+
+            <div class="car-item">
+
+                <h3>Performance Chip Tuning</h3>
+                <p>Increase your car's horsepower and torque with our expert chip tuning services.</p>
+            </div>
+
+            <div class="car-item">
+
+                <h3>Custom Body Kits</h3>
+                <p>Transform the look of your car with our stylish and aerodynamic body kits.</p>
+            </div>
+
+            <div class="car-item">
+
+                <h3>Suspension Upgrades</h3>
+                <p>Improve handling and ride quality with our premium suspension upgrades.</p>
+            </div>
+
+            <div class="car-item">
+
+                <h3>Alloy Wheels</h3>
+                <p>Upgrade your car's aesthetics and performance with lightweight alloy wheels</p>
+            </div>
+        </section>
+    </div>
+
+    <<footer>
+            <p>&copy; 2026 GEAR HEAD. All rights reserved.</p>
+        </footer>
+
+</body>
+
+</html>
